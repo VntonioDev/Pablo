@@ -1,0 +1,24 @@
+config:
+  target: 'http://localhost:8101' 
+  phases:
+    - duration: 20  
+      arrivalRate: 5  
+
+scenarios:
+  - flow:
+      - get:
+          url: "/menu-principal"  
+      - post:
+          url: "/create-consumption-report"  
+          json: 
+            reportType: "weekly" 
+      - get:
+          url: "/consumption-history" 
+      - post:
+          url: "/tomorrow-consumption"  
+          json: 
+            userId: "12345" 
+      - post:
+          url: "/afternoon-consumption"  
+          json: 
+            userId: "12345"  

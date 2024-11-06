@@ -1,0 +1,183 @@
+.registrarse-page {
+  --background: #CCE9E3; /* Color de fondo */
+  height: 100%;
+}
+
+.logo-container {
+  background-color: #8ACDDC;
+  text-align: center;
+  padding: 12px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+}
+
+.logo-image-left,
+.logo-image-right {
+  width: 100px;
+  height: 100px;
+}
+
+.registrarse-container {
+  max-width: 400px;
+  width: 100%;
+  margin: 150px auto 0 auto;
+  padding: 20px;
+  background-color: #CCE9E3; /* Color del fondo del formulario */
+  border-radius: 10px; /* Borde redondeado */
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1); /* Sombra suave */
+}
+
+.title {
+  text-align: center;
+  font-size: 32px; /* Tamaño igual a "Iniciar Sesión" */
+  font-weight: bold;
+  margin-bottom: 20px;
+  color: #000000;
+}
+
+.input-label {
+  display: block;
+  margin-bottom: 5px;
+  font-size: 14px;
+  color: #5f5f5f;
+}
+
+/* Input - igual al de Iniciar Sesión */
+ion-input {
+  --background: #E2DEDE;
+  --color: #000;
+  padding: 10px;
+  border: none;
+  border-bottom: 2px solid #000000;
+  font-size: 16px;
+  display: block;
+  width: 100%;
+  margin-bottom: 20px;
+  border-radius: 5px;
+}
+
+/* Ajuste del placeholder para inputs */
+ion-input::part(placeholder) {
+  padding-left: 10px; /* Espacio para el texto del placeholder */
+}
+
+/* Botón de registrarse similar al de iniciar sesión */
+.login-button {
+  --background: #5c6bc0;
+  --color: #ffffff;
+  font-size: 18px;
+  font-weight: bold;
+  margin-top: 20px;
+  padding: 12px;
+  border-radius: 20px; /* Estilo ovalado */
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1); /* Sombra suave */
+}
+
+.terms {
+  font-size: 12px;
+  text-align: center;
+  color: #000000;
+  margin-top: 20px;
+}
+
+/* Estilos responsivos */
+@media (max-width: 600px) {
+  .registrarse-container {
+    width: 90%;
+    padding: 20px;
+  }
+
+  .logo-image-left,
+  .logo-image-right {
+    width: 80px;
+    height: 80px;
+  }
+
+  .title {
+    font-size: 28px; /* Ajustar tamaño de la fuente en pantallas pequeñas */
+  }
+}
+
+ion-item {
+  --background: transparent; /* Quita el fondo blanco de ion-item */
+  display: flex;
+  align-items: center;
+  margin-bottom: 20px;
+  padding: 10px;
+}
+
+.phone-number-container {
+  display: flex;
+  align-items: center;
+  width: 100%;
+}
+
+.phone-prefix {
+  background-color: #CCE9E3;
+  padding: 10px;
+  border-radius: 4px;
+  font-weight: bold;
+  margin-right: 5px;
+  display: flex;
+  height: 56px; /* Ajusta la altura del prefijo al tamaño del input */
+  line-height: 1; /* Asegura que el texto no se desplace verticalmente */
+}
+
+
+ion-icon {
+  margin-right: 10px; /* Ajusta el espaciado del icono si es necesario */
+  font-size: 22px;
+}
+.error-message-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: #f8d7da; /* Fondo rojo claro */
+  color: #721c24; /* Texto rojo oscuro */
+  padding: 25px 30px; /* Aumenta el relleno */
+  border-radius: 12px; /* Bordes más redondeados */
+  box-shadow: 0 6px 10px rgba(0, 0, 0, 0.2);
+  z-index: 1000;
+  width: 90%; /* Aumenta el ancho total */
+  max-width: 500px; /* Aumenta el tamaño máximo */
+  text-align: center;
+  opacity: 0; /* Oculto inicialmente */
+  transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.error-icon {
+  color: #f44336; /* Ícono rojo */
+  font-size: 32px; /* Aumenta el tamaño del ícono */
+  margin-right: 12px;
+}
+
+.error-text {
+  font-size: 20px; /* Aumenta el tamaño de la fuente */
+  margin: 0;
+}
+
+
+.animate-error {
+  opacity: 1; /* Aparece */
+  animation: fadeInDown 0.5s ease forwards;
+}
+
+@keyframes fadeInDown {
+  0% {
+    opacity: 0;
+    transform: translate(-50%, -60%);
+  }
+  100% {
+    opacity: 1;
+    transform: translate(-50%, -50%);
+  }
+}

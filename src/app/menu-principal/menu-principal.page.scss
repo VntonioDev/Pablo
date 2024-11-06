@@ -1,0 +1,131 @@
+/* Estilos globales para el color de fondo de las cajas */
+.box ion-card {
+    background-color: #8ACDDC;
+    text-align: center;
+}
+
+/* Día Actual */
+.dia-actual {
+    font-size: 32px; /* Tamaño de fuente aumentado */
+    font-weight: bold; /* Texto en negrita */
+    text-align: center; /* Centrado */
+    margin: 20px 0; /* Espacio superior e inferior */
+}
+
+/* Sección de Límite Establecido */
+.limite-section {
+    background-color: #8ACDDC;
+    padding: 20px;
+    margin: 10px;
+    text-align: center;
+    border-radius: 8px;
+    font-size: 18px;
+    border: 1px solid #000;
+}
+
+/* Estilos para los botones de contador */
+.btn-counter {
+    background-color: #8ACDDC;
+    color: #000;
+    font-size: 20px;
+    margin: 5px;
+    border-radius: 8px;
+}
+
+/* Contenedor de Consumo */
+.consumo-container {
+    display: flex; /* Alineación horizontal */
+    justify-content: space-around; /* Espacio entre cuadros */
+    margin: 20px 0; /* Espacio superior e inferior */
+}
+
+/* Estilos para cada cuadro de consumo */
+.consumo-box {
+    flex: 1; /* Ocupa el mismo espacio */
+    margin: 0 10px; /* Espacio lateral entre cuadros */
+    padding: 20px; /* Espaciado interno */
+    font-size: 20px; /* Tamaño de fuente aumentado */
+}
+
+/* Estado del sistema */
+.estado-sistema {
+    text-align: center; /* Centrado */
+    margin-top: 20px; /* Espacio superior */
+}
+
+/* Color de fondo del menú */
+ion-menu {
+    --background: #8ACDDC;
+}
+
+/* Estilos para los elementos de la lista del menú */
+ion-list ion-item {
+    font-size: 18px;
+    font-weight: bold;
+}
+
+/* Estilos para el encabezado */
+.header-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    background-color: #8ACDDC;
+}
+
+.header-title {
+    font-size: 24px;
+    font-weight: bold;
+    margin: 0;
+    text-align: center;
+    color: white;
+}
+
+/* Contenedor del ícono de usuario en el encabezado */
+.user-icon-container {
+    margin-right: 10px;
+}
+
+/* Contenedor de entrada para el límite */
+.input-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 10px;
+}
+
+/* Estilos para cada cuadro */
+.box {
+    margin: 10px;
+}
+
+/* Estilo de tarjeta para cuadros */
+ion-card {
+    background-color: #8ACDDC;
+    text-align: center;
+}
+
+/* Estilos para el campo de entrada de número */
+input[type="number"] {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    /* Eliminar la apariencia predeterminada */
+    -webkit-appearance: none; /* Safari */
+    -moz-appearance: textfield; /* Firefox */
+    appearance: none; /* Propiedad estándar */
+}
+
+/* Ocultar los botones de incremento y decremento en el campo de entrada */
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+    -webkit-appearance: none; /* Safari */
+    margin: 0; /* Restablecer margen */
+}
+
+/* Estilos para el mensaje de feedback */
+ion-toast {
+    color: #FFFFFF;
+    background-color: #28a745; /* Verde */
+}

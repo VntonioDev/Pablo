@@ -1,0 +1,166 @@
+/* Fondo completo para la página */
+.login-content {
+  --background: #CCE9E3; /* Color de fondo solicitado */
+  height: 100%;
+}
+
+/* Fondo completo para la cabecera */
+.logo-container {
+  background-color: #8ACDDC;
+  text-align: center;
+  padding: 12px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%; /* Que ocupe el 100% del ancho */
+  position: fixed; /* Para que esté fijo en la parte superior */
+  top: 0;
+  left: 0;
+}
+
+/* Ajustar un poco el tamaño de las imágenes */
+.logo-image-left,
+.logo-image-right {
+  width: 100px;
+  height: 100px;
+}
+
+/* Ajustar la posición del contenedor */
+.login-container {
+  max-width: 400px;
+  width: 100%;
+  margin: 150px auto 0 auto; /* Ajustar el margen superior para que el contenido se separe de la cabecera */
+  padding: 20px;
+}
+
+/* Agrandar el texto de "Iniciar Sesión" arriba del formulario */
+h1 {
+  text-align: center;
+  font-size: 32px; /* Aumentar tamaño de la fuente */
+  font-weight: bold;
+  margin-bottom: 20px;
+  color: #000000;
+}
+
+/* Asegurar que el label siempre esté visible y fijo sobre el input */
+.input-item {
+  display: block; /* Mostrar el texto de "Correo electrónico" como un bloque arriba */
+  margin-bottom: 5px; /* Espacio entre el label y el input */
+  font-size: 14px;
+  color: #ffffff;
+  --background: #e2dede;
+}
+
+/* Input */
+ion-input {
+  --background: #e2dede;
+  --color: #000; /* Texto negro al escribir */
+  padding: 10px;
+  border: none;
+  border-bottom: 2px solid #000000;
+  font-size: 16px;
+  display: block;
+  width: 100%;
+  margin-bottom: 20px;
+}
+
+/* Ajustar el placeholder (correo electrónico y contraseña) con un pequeño margen */
+ion-input::part(placeholder) {
+  padding-left: 10px; /* Mover el texto del placeholder ligeramente hacia la derecha */
+}
+
+/* Ajuste de checkbox y texto "Guardar contraseña" en la misma línea */
+.custom-checkbox-item {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start; /* Alinear el checkbox a la izquierda y el texto justo al lado */
+  margin-bottom: 20px;
+}
+
+.custom-checkbox-item ion-checkbox {
+  margin-right: 10px; /* Espacio entre el checkbox y el texto */
+}
+
+.custom-checkbox-item ion-label {
+  font-size: 14px;
+  color: #5f5f5f;
+  margin-left: 0; /* Eliminar el margen extra para que esté justo al lado del checkbox */
+}
+
+/* Botón de iniciar sesión más ovalado */
+.login-button {
+  --background: #5c6bc0;
+  --color: #ffffff;
+  font-size: 18px;
+  font-weight: bold;
+  margin-top: 20px;
+  padding: 12px;
+  border-radius: 60px; /* Aumentar el valor para hacerlo más ovalado */
+}
+
+.forgot-password {
+  text-align: right;
+  margin-bottom: 15px;
+}
+
+/* Ajustar color para ¿No tienes cuenta? y Regístrate */
+.register-link {
+  text-align: center;
+  margin-top: 20px;
+}
+
+.register-link a {
+  color: #000; /* Texto negro */
+}
+
+.register-link a:last-child {
+  color: #1f22f1; /* "Regístrate" en azul */
+}
+
+.terms {
+  font-size: 12px;
+  text-align: center;
+  color: #000000;
+  margin-top: 20px;
+}
+
+.terms a {
+  font-weight: bold;
+}
+
+/* Estilos responsivos */
+@media (max-width: 600px) {
+  .login-container {
+    width: 100%;
+    padding: 20px;
+  }
+
+  .logo-image-left,
+  .logo-image-right {
+    width: 80px;
+    height: 80px;
+  }
+
+  h2 {
+    font-size: 28px; /* Ajustar tamaño de la fuente en pantallas pequeñas */
+  }
+}
+
+.loading-container {
+  text-align: center;
+  margin-top: 20px;
+  font-size: 18px;
+  color: #000000;
+  
+  ion-spinner {
+    margin-top: 10px;
+    --color: #5c6bc0; /* Color del spinner */
+  }
+}
+.mensaje-container {
+  display: flex;
+  justify-content: center;  /* Centra horizontalmente */
+  align-items: center;      /* Centra verticalmente */
+  height: 100px;            /* Ajusta la altura según sea necesario */
+  margin-top: 50px;        /* Espacio superior para moverlo hacia abajo */
+}

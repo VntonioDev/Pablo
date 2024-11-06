@@ -1,0 +1,206 @@
+/* Página de Modificar Perfil */
+.modificar-perfil-page {
+  --background: #CCE9E3; /* Fondo de la página */
+  height: 100%;
+  padding: 0 10px; /* Padding lateral para responsividad */
+}
+
+/* Contenedor de la Cabecera */
+.logo-container {
+  background-color: #8ACDDC;
+  text-align: center;
+  padding: 12px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%; /* Que ocupe el 100% del ancho */
+  position: fixed; /* Para que esté fijo en la parte superior */
+  top: 0;
+  left: 0;
+}
+
+/* Iconos de la Cabecera */
+.logo-image-left, .logo-image-right {
+  width: 120px; /* Tamaño aumentado */
+  height: 120px; /* Tamaño aumentado */
+}
+
+/* Botón "Volver" Creativo */
+.volver-button {
+  position: fixed;
+  top: 100px;
+  left: 5px;
+  color: white;
+  padding-left: 15px; /* Reemplazar --padding-start */
+  padding-right: 15px; /* Reemplazar --padding-end */
+  border-radius: 50px;
+  font-size: 16px;
+  display: flex;
+  align-items: center;
+  z-index: 11;
+}
+
+.volver-button ion-icon {
+  margin-right: 5px;
+}
+
+/* Contenedor del Perfil */
+.perfil-container {
+  margin-top: 100px; /* Espacio para la cabecera */
+  padding: 20px;
+  text-align: center;
+}
+
+/* Icono de Usuario Centrado y Ajustable */
+.icono-usuario-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.avatar-container {
+  --size: 100px; /* Tamaño ajustable */
+}
+
+.usuario-icon {
+  font-size: var(--size);
+  color: #000;
+}
+
+/* Estilo para los Inputs y Labels */
+ion-item {
+  --background: transparent; /* Quitar el fondo blanco */
+  --inner-padding-start: 0; /* Quitar padding interno */
+  --min-height: 60px; /* Altura mínima para mejor visualización */
+  --border-color: transparent; /* Eliminar borde */
+  border: none; /* Asegúrate de que no haya borde */
+}
+
+ion-item ion-label {
+  color: #000; /* Color del label */
+  padding-left: 0; /* Quitar padding */
+}
+
+/* Estilo para el Input */
+ion-input {
+  --background: transparent; /* Color de fondo de los inputs */
+  --color: #000; /* Texto negro al escribir */
+  padding: 10px;
+  border: none; /* Asegúrate de que no haya borde */
+  border-bottom: 2px solid #000000; /* Borde inferior negro */
+  font-size: 16px;
+  display: block;
+  width: 100%;
+  margin-bottom: 20px;
+}
+
+/* Íconos de Edición */
+ion-item ion-icon {
+  font-size: 20px;
+  color: #8ACDDC;
+  cursor: pointer;
+}
+
+/* Estilo del Icono en el Input */
+ion-input ion-icon {
+  font-size: 18px;
+  color: #8ACDDC;
+  margin-left: 10px; /* Espacio entre el texto y el icono */
+}
+
+/* Botón para Guardar Cambios */
+.guardar-button {
+  background: #4CAF50; /* Usar propiedad estándar */
+  color: white;
+  margin-top: 10px;
+}
+
+/* Mensaje de Confirmación Centrado y Animado */
+.mensaje-guardado {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: rgba(76, 175, 80, 0.9); /* Fondo verde semi-transparente */
+  color: white;
+  padding: 20px 30px;
+  border-radius: 10px;
+  z-index: 100;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  animation: fadeOut 2s forwards;
+}
+
+.icono-tick {
+  font-size: 24px;
+  margin-right: 10px;
+}
+
+/* Animación para el Mensaje de Confirmación */
+@keyframes fadeOut {
+  0% { opacity: 1; }
+  80% { opacity: 1; }
+  100% { opacity: 0; transform: translate(-50%, -60%); }
+}
+
+/* Animación al Mostrar el Mensaje */
+.animacion-mensaje {
+  animation: slideIn 0.5s ease-in-out forwards;
+}
+
+@keyframes slideIn {
+  0% {
+    opacity: 0;
+    transform: translate(-50%, -60%);
+  }
+  100% {
+    opacity: 1;
+    transform: translate(-50%, -50%);
+  }
+}
+
+/* Responsividad */
+@media (max-width: 768px) {
+  .logo-image-left, .logo-image-right {
+    width: 60px;
+    height: 60px;
+  }
+
+  .usuario-icon {
+    font-size: 80px;
+  }
+
+  .volver-button {
+    font-size: 14px;
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+
+  .guardar-button {
+    font-size: 14px;
+  }
+}
+
+@media (max-width: 480px) {
+  .logo-image-left, .logo-image-right {
+    width: 30px;
+    height: 30px;
+  }
+
+  .usuario-icon {
+    font-size: 60px;
+  }
+
+  .volver-button {
+    font-size: 12px;
+    padding-left: 8px;
+    padding-right: 8px;
+  }
+
+  .guardar-button {
+    font-size: 12px;
+  }
+}

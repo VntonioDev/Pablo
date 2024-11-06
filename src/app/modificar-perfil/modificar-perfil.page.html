@@ -1,0 +1,79 @@
+<ion-content class="modificar-perfil-page">
+  <!-- Contenedor de la Cabecera -->
+  <div class="logo-container">
+    <img src="assets/imagenes/IconoHydro.png" alt="IconoHydro" class="logo-image-left">
+    <h1>HydroGuard</h1>
+    <img src="assets/imagenes/IconoHydro.png" alt="IconoHydro" class="logo-image-right" style="transform: scaleX(-1);">
+  </div>
+
+  <!-- Botón "Volver" Creativo y Alineado a la Izquierda -->
+  <ion-button class="volver-button" (click)="goBack()">
+    <ion-icon slot="start" name="arrow-back-circle-outline"></ion-icon>
+    Volver
+  </ion-button>
+
+  <!-- Contenedor del Perfil -->
+  <div class="perfil-container">
+    <div class="perfil-info">
+      <!-- Icono de Usuario Centrado y Ajustable -->
+      <div class="icono-usuario-container">
+        <ion-avatar class="avatar-container">
+          <ion-icon name="person-circle-outline" class="usuario-icon"></ion-icon>
+        </ion-avatar>
+      </div>
+
+      <h2>Francisco Salinas</h2>
+
+      <!-- Lista de Campos de Perfil -->
+      <ion-list>
+        <!-- Campo Email -->
+        <ion-item>
+          <ion-label position="floating">Email</ion-label>
+          <ion-input type="email" [(ngModel)]="email" [readonly]="!editables.email">
+            <ion-icon name="create-outline" slot="end" (click)="toggleEditable('email')"></ion-icon>
+          </ion-input>
+        </ion-item>
+
+        <!-- Campo Contraseña -->
+        <ion-item>
+          <ion-label position="floating">Contraseña</ion-label>
+          <ion-input 
+            type="password" 
+            [(ngModel)]="password" 
+            [readonly]="!editables.password">
+            <ion-icon name="eye" slot="end" (click)="togglePasswordVisibility()"></ion-icon>
+            <ion-icon name="create-outline" slot="end" (click)="toggleEditable('password')"></ion-icon>
+          </ion-input>
+        </ion-item>
+
+        <!-- Campo Teléfono -->
+        <ion-item>
+          <ion-label position="floating">Teléfono</ion-label>
+          <ion-input type="tel" [(ngModel)]="telefono" [readonly]="!editables.telefono">
+            <ion-icon name="create-outline" slot="end" (click)="toggleEditable('telefono')"></ion-icon>
+          </ion-input>
+        </ion-item>
+
+        <!-- Campo ID de Usuario (No Editable) -->
+        <ion-item>
+          <ion-label position="floating">ID de Usuario</ion-label>
+          <ion-input type="text" [(ngModel)]="userID" disabled></ion-input>
+        </ion-item>
+      </ion-list>
+
+      <!-- Monto Estimado del Mes -->
+      <p class="estimacion-monto">Monto estimado del mes: {{ montoEstimado }} CLP</p>
+      
+      <!-- Botón para Guardar Cambios -->
+      <ion-button expand="full" class="guardar-button" (click)="guardarCambios()" [disabled]="!cambiosRealizados">
+        Guardar Cambios
+      </ion-button>
+    </div>
+  </div>
+
+  <!-- Mensaje de Confirmación -->
+  <div *ngIf="mostrarMensajeGuardado" class="mensaje-guardado animacion-mensaje">
+    <ion-icon class="icono-tick" name="checkmark-circle-outline"></ion-icon>
+    Cambios guardados correctamente.
+  </div>
+</ion-content>

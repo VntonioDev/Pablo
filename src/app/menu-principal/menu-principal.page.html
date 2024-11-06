@@ -1,0 +1,103 @@
+<ion-content id="main-content">
+  <!-- Custom Header -->
+  <div class="header-container">
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button> <!-- Left Menu Button -->
+    </ion-buttons>
+    <h1 class="header-title">HydroGuard</h1>
+    <ion-buttons slot="end">
+      <ion-button class="user-icon-container" (click)="openUserMenu()">
+        <ion-icon name="person-outline" class="user-icon"></ion-icon> <!-- User Icon -->
+      </ion-button>
+    </ion-buttons>
+  </div>
+
+  <!-- Día Actual -->
+  <p class="dia-actual">Día Actual: {{ diaActual }}</p> <!-- Display Current Day -->
+
+  <!-- Límite Section -->
+  <div class="limite-section">
+    <ion-label>Límite establecido:</ion-label>
+    <div class="input-container">
+      <ion-input 
+        id="limite-input" 
+        type="number" 
+        [(ngModel)]="limite" 
+        step="0.01" 
+        min="0.01"
+        (ionInput)="updateLimit($event)"
+      ></ion-input>
+      <ion-button class="btn-counter" (click)="decrease()">-</ion-button>
+      <ion-button class="btn-counter" (click)="increase()">+</ion-button>
+    </div>
+    <p>*Se recomienda revisar su boleta del agua para determinar su límite.</p>
+  </div>
+
+  <!-- Consumo Boxes in Flex Layout -->
+  <div class="consumo-container">
+    <div class="box">
+      <ion-card class="consumo-box">
+        <ion-card-header>Consumo (Hoy desde 00:00)</ion-card-header>
+        <ion-card-content>0.4 m³</ion-card-content>
+      </ion-card>
+    </div>
+
+    <div class="box">
+      <ion-card class="consumo-box">
+        <ion-card-header>Consumo Semanal</ion-card-header>
+        <ion-card-content>2.1 m³</ion-card-content>
+      </ion-card>
+    </div>
+  </div>
+
+  <div class="box">
+    <ion-card>
+      <ion-card-header>Estado del Sistema</ion-card-header>
+      <ion-card-content>Funcionando Correctamente</ion-card-content>
+    </ion-card>
+  </div>
+
+  <!-- Toast para el mensaje de cierre de sesión -->
+  <ion-toast 
+    *ngIf="showToast" 
+    [message]="toastMessage" 
+    duration="3000" 
+    color="success"
+    position="top"
+    (didDismiss)="showToast = false">
+  </ion-toast>
+</ion-content>
+
+<!-- Side Menu -->
+<ion-menu side="start" content-id="main-content">
+  <ion-header>
+    <ion-toolbar>
+      <ion-title>Menú</ion-title>
+    </ion-toolbar>
+  </ion-header>
+  <ion-content>
+    <ion-list>
+      <ion-item>Crear Reporte de Consumo</ion-item>
+      <ion-item>Historial de Consumo</ion-item>
+      <ion-item>Consumo "Mañana"</ion-item>
+      <ion-item>Consumo "Tarde"</ion-item>
+    </ion-list>
+  </ion-content>
+</ion-menu>
+
+<!-- User Menu -->
+<ion-menu side="end" content-id="main-content" menuId="userMenu">
+  <ion-header>
+    <ion-toolbar>
+      <ion-title>Opciones de Usuario</ion-title>
+    </ion-toolbar>
+  </ion-header>
+  <ion-content>
+    <ion-list>
+      <ion-item button (click)="modificarPerfil()">Modificar Perfil</ion-item>
+      <ion-item button (click)="notificaciones()">Notificaciones</ion-item>
+      <ion-item button (click)="sugerenciasDeAhorro()">Sugerencias de Ahorro</ion-item>
+      <ion-item button (click)="cerrarSesion()">Cerrar Sesión</ion-item>
+    </ion-list>
+  </ion-content>
+</ion-menu>
